@@ -12,7 +12,7 @@ def root():
 
 
     
-@app.route("/", methods=["GET"])
+@app.route("/answers", methods=["GET"])
 def get_answers():
     data_answers = request.get_json()
     real_data = [
