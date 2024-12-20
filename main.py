@@ -70,8 +70,8 @@ def ia(data_answers):
   return convertido
   
     
-@app.route("/answers", methods=["GET"])
-def get_answers():
+@app.route("/answers", methods=["POST"])
+def endpoint():
   data_answers = request.get_json()
     
   resultado = ia(data_answers)
@@ -81,6 +81,18 @@ def get_answers():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+""" @app.route("/answers", methods=["GET"])
+def get_answers():
+  data_answers = request.get_json()
+    
+  resultado = ia(data_answers)
+
+  return jsonify(resultado[0]), 200
+    
+
+if __name__ == "__main__":
+    app.run(debug=True) """
     
 
 """ const data = {
