@@ -71,7 +71,7 @@ def ia(data_answers):
   
     
 @app.route("/answers", methods=["POST"])
-def endpoint():
+def get_answers():
   data_answers = request.get_json()
     
   resultado = ia(data_answers)
