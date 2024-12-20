@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, plot_tree
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ app = Flask(__name__)
 def root():
     return jsonify({"message": "Hello World!"}) """
 
+CORS(app, resources={r"/*": {"origins": "*"}})
 def ia(data_answers):
   real_data = [
   [1,0,0,0,0,0,0], 
