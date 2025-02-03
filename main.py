@@ -35,17 +35,17 @@ def ia(data_answers):
     'Protozoarios',
     'Poriferos',
     'Equinodermos',
-    'Ctnoforos',
+    'Ctenoforos',
     'Cnidarios',
     'Nemertinos',
-    'Platermintos',
+    'Platelmintos',
     'Acantocefalos',
     'Asquelmintos',
     'Cordados', 
     'Moluscos',
     'Anelidos',
-    'Artoprodos'
-  ]
+    'Artropodos'
+    ]
   
   # # Create the example dataset
   data = {'Feature': np.array(real_data), 'Target': target}
@@ -74,15 +74,14 @@ def ia(data_answers):
 @app.route("/answers", methods=["POST"])
 def get_answers():
   data_answers = request.get_json()
-    
-  resultado = ia(data_answers)
 
+  resultado = ia(data_answers)
   return jsonify(resultado[0]), 200
-    
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    
+  app.run(debug=True)
+
 """ @app.route("/answers", methods=["GET"])
 def get_answers():
   data_answers = request.get_json()
